@@ -15,6 +15,8 @@ class DashboardController extends Controller
 
         
 
-        return view('dashboard', ['links'=> $user->links]);
+        return view('dashboard', ['links'=> $user->links()->orderBy('sort')->get(),
+    
+        ]);
     }
 }
